@@ -10,7 +10,6 @@
     <title>Innova</title>
 </head>
 <body>
-
 <header class="header">
     <div class="header__body">
         <a href="#" class="header__logo">
@@ -18,42 +17,46 @@
             <img class="header__logo-scroll" src="./src/img/logo/logo_scroll.svg" alt="logo">
         </a>
         <nav class="header__nav">
-            <div class="header__nav-body">
-                <div class="header__nav-links">
-                    <div class="header__nav-link">
-                        <a id="menu_services" href="">Услуги</a>
-                        <div data-menu="menu_services" class="header__nav-link-hover">
-                            <a href="#">Консультация и диагностика</a>
-                            <a href="#">Имплантация</a>
-                            <a href="#">Виниры</a>
-                            <a href="#">Коронки</a>
-                            <a href="#">Установка брекетов</a>
-                            <a href="#">Установка элайнеров</a>
-                            <a href="#">Лечение зубов</a>
-                            <a href="#">Профессиональная гигиена</a>
-                            <a href="#">Профессиональное отбеливание</a>
-                            <a href="#">Профосмотр</a>
-                            <a href="#">Детская стоматология</a>
-                        </div>
-                    </div>
-                    <div class="header__nav-link"><a href="">Врачи</a></div>
-                    <div class="header__nav-link"><a href="">Акции</a></div>
-                    <div class="header__nav-link"><a href="">Цены</a></div>
-                    <div class="header__nav-link">
-                        <a id="patients" href="">Пациентам</a>
-                        <div data-menu="patients" class="header__nav-link-hover">
-                            <a href="#">Примеры работ</a>
-                            <a href="#">Отзывы</a>
-                            <a href="#">Налоговый вычет</a>
-                            <a href="#">О нас</a>
-                        </div>
-                    </div>
-                    <div class="header__nav-link"><a href="">Адреса клиник</a></div>
-                </div>
-                <button type="button" class="header__nav-search">
-                    <img src="./src/img/icons/icon-search.svg" alt="">
-                </button>
-            </div>
+            <ul class="header__nav-links">
+                <li class="header__nav-link">
+                    <a class="nav__link" href="">
+                        Услуги
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="header__submenu">
+                        <li class="submenu__link"><a href="#">Консультация и диагностика</a></li>
+                        <li class="submenu__link"><a href="#">Имплантация</a></li>
+                        <li class="submenu__link"><a href="#">Виниры</a></li>
+                        <li class="submenu__link"><a href="#">Коронки</a></li>
+                        <li class="submenu__link"><a href="#">Установка брекетов</a></li>
+                        <li class="submenu__link"><a href="#">Установка элайнеров</a></li>
+                        <li class="submenu__link"><a href="#">Лечение зубов</a></li>
+                        <li class="submenu__link"><a href="#">Профессиональная гигиена</a></li>
+                        <li class="submenu__link"><a href="#">Профессиональное отбеливание</a></li>
+                        <li class="submenu__link"><a href="#">Профосмотр</a></li>
+                        <li class="submenu__link"><a href="#">Детская стоматология</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav-link"><a class="nav__link" href="">Врачи</a></li>
+                <li class="header__nav-link"><a class="nav__link" href="">Акции</a></li>
+                <li class="header__nav-link"><a class="nav__link" href="">Цены</a></li>
+                <li class="header__nav-link">
+                    <a class="nav__link" href="">
+                        Пациентам
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul class="header__submenu">
+                        <li class="submenu__link"><a href="#">Примеры работ</a></li>
+                        <li class="submenu__link"><a href="#">Отзывы</a></li>
+                        <li class="submenu__link"><a href="#">Налоговый вычет</a></li>
+                        <li class="submenu__link"><a href="#">О нас</a></li>
+                    </ul>
+                </li>
+                <li class="header__nav-link"><a class="nav__link" href="">Адреса клиник</a></li>
+            </ul>
+            <button type="button" class="header__nav-search">
+                <img src="./src/img/icons/icon-search.svg" alt="">
+            </button>
         </nav>
         <div class="header__right">
             <div class="header__right-phone">
@@ -64,7 +67,193 @@
         </div>
     </div>
 </header>
+<main class="main">
+    <section class="section__main">
+        <div class="container">
+            <div class="section__main-text">
+                <h1 class="main__title">Стоматология <br> Доктора Винокур</h1>
+                <div class="main-text">Безболезненное и высококачественное решение самых сложных задач в области
+                    стоматологии
+                </div>
+                <img class="get-consultation" src="./src/img/icons/btn-get-consult.svg" alt="Получить консультацию">
+            </div>
+            <div class="section__main-images"></div>
+        </div>
 
+    </section>
+    <section class="services">
+        <div class="container">
+            <div class="services__title">
+                Оказываем широкий перечень услуг по лечению и протезированию зубов
+            </div>
+            <div class="services__types">
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/1.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/2.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/3.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/4.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/5.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/6.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/7.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+                <div class="service__type">
+                    <div class="service__type-body">
+                        <div class="service__type-name">Имплантация</div>
+                        <div class="service__type-about">
+                            Все виды имплантации и сопутствующие операции
+                            по костной пластике
+                        </div>
+                        <div class="service__type-bottom">
+                            <div class="service__type-link"><a class="btn-about" href="">Подробнее</a></div>
+                            <div class="service__type-price">От 26 000 ₽</div>
+                        </div>
+                    </div>
+                    <div class="service__type-bg">
+                        <img src="./src/img/services/8.png" alt="">
+                    </div>
+                    <div class="service__type-top">
+                        <span class="service__type-what">Основная услуга</span>
+                        <span class="service__type-sale">Акция</span>
+                    </div>
+                </div>
+            </div>
+            <a class="services_btn btn l-btn" href="">Перейти ко всем услугам</a>
+        </div>
+    </section>
+</main>
+
+<div class="bg"></div>
 </body>
 <script src="./src/js/script.js"></script>
 </html>
