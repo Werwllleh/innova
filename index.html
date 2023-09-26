@@ -7,9 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./src/css/style.css">
     <link rel="stylesheet" href="./src/css/mobilestyle.css">
+    <link rel="stylesheet" href="./src/css/swiper.css">
     <title>Innova</title>
 </head>
 <body>
+<div class="bg"></div>
 <header class="header">
     <div class="header__body">
         <a href="#" class="header__logo">
@@ -267,9 +269,75 @@
             <a class="services_btn btn l-btn" href="">Перейти ко всем услугам</a>
         </div>
     </section>
-</main>
+    <section class="stocks">
+        <div class="container">
+            <div class="stocks__header">
+                <div class="stocks__title">Акции и скидки на лечение в Иннова Клиник</div>
+                <a class="stocks__show-all" href="#">Смотреть все акции</a>
+            </div>
+            <div class="stocks__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/1.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/2.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/3.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/4.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/1.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/2.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/3.png" alt="Акция">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./src/img/stocks/4.png" alt="Акция">
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
 
-<div class="bg"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+
+                <div class="swiper-scrollbar"></div>
+            </div>
+        </div>
+    </section>
+</main>
 </body>
 <script src="./src/js/script.js"></script>
+<script src="./src/js/swiper.js"></script>
+<script>
+    const swiper = new Swiper('.stocks__slider', {
+        // Optional parameters
+        slidesPerView: 3,
+        spaceBetween: 40,
+        direction: 'horizontal',
+        loop: false,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+
+        // Navigation arrows
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
+</script>
 </html>
