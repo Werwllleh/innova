@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    document.addEventListener('scroll', (event) => {
-        console.log(event)
-    });
 
     const background = document.querySelector('.bg');
 
@@ -42,6 +39,58 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     /*=============SUB-MENU*==========*/
+
+
+
+    /*=============SLIDERS*==========*/
+    new Swiper('.stocks__slider', {
+        // Optional parameters
+        slidesPerView: 3,
+        spaceBetween: 40,
+        direction: 'horizontal',
+        loop: false,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+
+        // Navigation arrows
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
+
+    new Swiper('.doctors__slider', {
+        // Optional parameters
+        slidesPerView: 3,
+        spaceBetween: 20,
+        direction: 'horizontal',
+        loop: false,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+
+        // Navigation arrows
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
+    /*============/SLIDERS*==========*/
+
+
 })
 
 

@@ -1,3 +1,39 @@
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: local("Wix Madefor Display Regular"),
+    url("../fonts/WixMadeforDisplay-Regular.ttf") format("ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: local("Wix Madefor Display Medium"),
+    url("../fonts/WixMadeforDisplay-Medium.ttf") format("ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: local("Wix Madefor Display SemiBold"),
+    url("../fonts/WixMadeforDisplay-SemiBold.ttf") format("ttf");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: local("Wix Madefor Display Bold"),
+    url("../fonts/WixMadeforDisplay-Bold.ttf") format("ttf");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Wix Madefor Display";
+    src: local("Wix Madefor Display ExtraBold"),
+    url("../fonts/WixMadeforDisplay-ExtraBold.ttf") format("ttf");
+    font-weight: 800;
+}
+
+
 * {
     padding: 0;
     margin: 0;
@@ -87,6 +123,7 @@ img, svg {
 body {
     position: relative;
     font-family: 'Wix Madefor Display', sans-serif;
+    background-color: #FFFFFF;
     line-height: 1;
 }
 
@@ -105,6 +142,46 @@ body {
 .blackout {
     z-index: 1;
     opacity: 0.4;
+}
+
+.h1-t {
+    font-size: 44px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.h2-t {
+    font-size: 38px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.h3-t {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.h4-t {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.b-txt {
+    color: #3A3C40;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.b-txt p:not(:last-child) {
+    margin: 0 0 24px 0;
 }
 
 .btn {
@@ -461,11 +538,6 @@ body {
 }
 
 .service__type-about {
-    color: #3A3C40;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1.4;
     margin: 0 0 34px 0;
     max-width: 400px;
 }
@@ -563,8 +635,6 @@ body {
 
 .stocks__title {
     color: #fff;
-    font-size: 38px;
-    font-weight: 600;
     max-width: 520px;
 }
 
@@ -590,8 +660,6 @@ body {
 
 .stocks__slider {
     position: relative;
-    /*max-width: 800px;*/
-    /*width: 600px;*/
     height: 540px;
 }
 
@@ -606,7 +674,7 @@ body {
     justify-content: space-between;
 }
 
-.slider__footer .swiper-pagination{
+.slider__footer .swiper-pagination {
     max-width: 92% !important;
 }
 
@@ -650,3 +718,122 @@ body {
 }
 
 /*================/STOCKS==============*/
+
+/*================DOCTORS==============*/
+
+.doctors {
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 170px 0;
+}
+
+.doctors__header {
+
+}
+
+.doctors__title {
+    max-width: 720px;
+    margin: 0 0 90px 0;
+}
+
+.doctors__slider {
+    position: relative;
+    height: 390px;
+}
+
+.doctor__slide {
+    border-radius: 16px;
+    background: #F5F5F5;
+    padding: 30px 10px 30px 30px;
+    width: 453px;
+}
+
+.doctor__slide-inner {
+
+}
+
+.doctor__header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.doctor__photo {
+    border-radius: 16px;
+    overflow: hidden;
+    margin: -70px 0 30px 0;
+}
+
+.doctor__photo img {
+
+}
+
+.doctor__advantages {
+
+}
+
+.doctor__experience {
+    border-radius: 100px;
+    background: #FFF;
+    padding: 4px 12px;
+    line-height: 1.4;
+    font-size: 16px;
+    margin: 0 0 33px 0;
+}
+
+.doctor__awards {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.doctor__awards li {
+    position: relative;
+    padding: 0 0 0 14px;
+}
+
+.doctor__awards li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+    width: 6px;
+    height: 6px;
+    background-color: #FFAB2B;
+    border-radius: 50%;
+}
+
+.doctor__awards li:not(:last-child) {
+    margin: 0 0 10px 0;
+}
+
+.doctor__info {
+
+}
+
+.doctor__name {
+    color: #15171B;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 260px;
+    margin: 0 0 14px 0;
+    height: 45px;
+}
+
+.doctor__position {
+    font-size: 16px;
+}
+
+.universal-slider .black-arrows .swiper-button-prev {
+    background-image: url("../img/icons/slider-left-arrow-black.svg") !important;
+}
+
+.universal-slider .black-arrows .swiper-button-next {
+    background-image: url("../img/icons/slider-right-arrow-black.svg") !important;
+}
+
+/*================/DOCTORS==============*/
