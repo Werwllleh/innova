@@ -1095,3 +1095,45 @@ body {
 
 
 /*================/FEEDBACK================*/
+
+
+
+/*================FOOTER================*/
+
+.footer {}
+.footer__body {}
+.footer__first-level {}
+.footer__second-level {}
+.footer__third-level {
+    position: relative;
+    border-radius: 0 0 30px 30px;
+    background: #242424;
+    padding: 30px 0 40px;
+    border-top: 1px solid #3A3C40;
+}
+.third__level-links {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+.third__level-link {
+    display: block;
+    color: #7A7E84;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.third__level-link a{
+    text-decoration: underline;
+}
+.appointment-consultation-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 160px;
+    height: 160px;
+}
+
+/*===============/FOOTER================*/
