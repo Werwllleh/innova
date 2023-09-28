@@ -275,7 +275,7 @@
                 <div class="stocks__title">Акции и скидки на лечение в Иннова Клиник</div>
                 <a class="stocks__show-all" href="#">Смотреть все акции</a>
             </div>
-            <div class="stocks__slider">
+            <div class="stocks__slider universal-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="./src/img/stocks/1.png" alt="Акция">
@@ -302,13 +302,16 @@
                         <img src="./src/img/stocks/4.png" alt="Акция">
                     </div>
                 </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
 
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-
-                <div class="swiper-scrollbar"></div>
+                <div class="slider__footer">
+                    <div class="slider__footer-pagination">
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <div class="slider__arrows">
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -332,8 +335,8 @@
 
         // Navigation arrows
         navigation: {
-            nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
         },
 
         // And if we need scrollbar
