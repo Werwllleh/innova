@@ -88,6 +88,30 @@ document.addEventListener('DOMContentLoaded', () => {
         // And if we need scrollbar
         scrollbar: false,
     });
+
+    new Swiper('.feedback__slider', {
+        // Optional parameters
+        slidesPerView: 2.8,
+        centeredSlides: true,
+        spaceBetween: 40,
+        direction: 'horizontal',
+        loop: false,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'progressbar',
+        },
+
+        // Navigation arrows
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
     /*============/SLIDERS*==========*/
 
 
