@@ -1131,6 +1131,73 @@ body {
 
 /*================/FEEDBACK================*/
 
+/*================PORTFOLIO================*/
+
+.portfolio {
+    position: relative;
+    overflow: hidden;
+    background-color: #242424;
+    padding: 120px 0 170px 0;
+}
+.portfolio__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 15px;
+    margin: 0 0 50px 0;
+}
+.portfolio__title {
+    color: #fff;
+    max-width: 700px;
+}
+.portfolio__show-all {}
+.portfolio__slider {
+    position: relative;
+}
+.portfolio__card {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.portfolio__card-inner {
+
+}
+
+.portfolio__card-ba-slider {
+
+}
+.portfolio__card-info {
+    padding: 12px 30px 30px 30px;
+}
+.portfolio__card-category {
+    margin: 0 0 8px 0;
+    color: #A5A8AD;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.33px;
+    text-transform: uppercase;
+}
+.portfolio__card-title {
+    margin: 0 0 16px 0;
+    color: #15171B;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.portfolio__card-worktime {
+
+}
+.portfolio__card-worktime span{
+
+}
+/*===============/PORTFOLIO================*/
+
+
 
 
 /*================FOOTER================*/
