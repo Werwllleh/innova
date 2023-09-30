@@ -134,61 +134,132 @@ document.addEventListener('DOMContentLoaded', () => {
         // And if we need scrollbar
         scrollbar: false,
     });
+
+    new Swiper('.map__info-slider', {
+        // Optional parameters
+        slidesPerView: 3.4,
+        spaceBetween: 10,
+        direction: 'horizontal',
+        loop: false,
+
+        // If we need pagination
+        pagination: false,
+
+        // Navigation arrows
+        navigation: {
+            prevEl: '.map-slider-button-prev',
+            nextEl: '.map-slider-button-next',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
+
     /*============/SLIDERS==========*/
 
 
+    const mapSwitchBtns = document.querySelectorAll('.map__info-placebtn');
+    const mapInfoBlock = document.querySelector('.map__info-content');
+
+    mapSwitchBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            if (btn.getAttribute('data-place') === 'place1') {
+                mapSwitchBtns[0].classList.add('active');
+                mapSwitchBtns[1].classList.remove('active');
+                mapInfoBlock.children[0].classList.add('show');
+                mapInfoBlock.children[1].classList.remove('show');
+            }
+            if (btn.getAttribute('data-place') === 'place2') {
+                mapSwitchBtns[1].classList.add('active');
+                mapSwitchBtns[0].classList.remove('active');
+                mapInfoBlock.children[1].classList.add('show');
+                mapInfoBlock.children[0].classList.remove('show');
+            }
+        })
+    });
+
+    const questions = document.querySelectorAll('.qa__question-checkbox');
+
+    questions.forEach((question) => {
+        question.addEventListener('click', (e) => {
+            let input = e.currentTarget;
+            let answer = e.currentTarget.parentNode.parentNode.children[1];
+
+            if (input.checked === true) {
+                answer.classList.add('active');
+            } else {
+                answer.classList.remove('active');
+            }
+        })
+    });
 
 
+    /*============MAP==========*/
+
+    const places = {
+        place1: [{
+            lat: 56.138666,
+            lon: 47.216191,
+        }],
+        place2: [{
+            lat: 56.126088,
+            lon: 47.230198,
+        }],
+    }
+
+    function init() {
+        let map = new ymaps.Map('mapInner', {
+            center: [56.138666, 47.216191],
+            zoom: 14
+        });
+
+        let activeCategory = "place1";
+
+        const showCategory = (category) => {
+            map.geoObjects.removeAll();
+
+            places[category].forEach((item) => {
+                const placemark = new ymaps.Placemark([item.lat, item.lon], {}, {
+                    iconLayout: 'default#image',
+                    // Своё изображение иконки метки.
+                    iconImageHref: './src/img/icons/map-place.svg',
+                    // Размеры метки.
+                    iconImageSize: [57, 73],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-29, -68]
+                });
+
+                map.geoObjects.add(placemark);
+            });
+
+            activeCategory = category;
+        }
+
+        mapSwitchBtns.forEach((button) => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-place');
+                showCategory(category);
+            });
+        });
+
+        showCategory(activeCategory);
+
+
+        map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+        map.controls.remove('trafficControl'); // удаляем контроль трафика
+        map.controls.remove('searchControl'); // удаляем поиск
+        map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+        map.controls.remove('rulerControl'); // удаляем контрол правил
+        map.controls.remove('typeSelector'); // удаляем тип
+
+    }
+
+    ymaps.ready(init);
+
+    /*===========/MAP==========*/
 
 })
 
 
-/*============MAP==========*/
 
-/*function initMap() {
-    let myMap = new ymaps.Map('mapInner', {
-        center: [52.726417, 41.425459],
-        zoom: 17,
-        controls: [],
-    });
-    let myPlacemark = new ymaps.Placemark(
-        myMap.getCenter(),
-        {
-            hintContent: 'г. Тамбов ул. Кавалерийская, 18а',
-        },
-        {
-            iconLayout: 'default#image',
-            iconImageHref: '../img/icons/map-place.svg',
-            iconImageSize: [32, 42],
-            iconImageOffset: [-16, -60],
-        }
-    );
-
-    myMap.geoObjects.add(myPlacemark);
-}
-
-document.addEventListener('DOMContentLoaded', function () {
-    if (document.querySelector('#mapInner').length) ymaps.ready(initMap);
-});*/
-
-let myMap;
-
-document.addEventListener('DOMContentLoaded', function () {
-    ymaps.ready(init);
-});
-
-function init () {
-    // Создание экземпляра карты и его привязка к контейнеру с
-    // заданным id ("map").
-    myMap = new ymaps.Map('mapInner', {
-        // При инициализации карты обязательно нужно указать
-        // её центр и коэффициент масштабирования.
-        center: [55.76, 37.64], // Москва
-        zoom: 10
-    }, {
-        searchControlProvider: 'yandex#search'
-    });
-
-}
-
-/*===========/MAP==========*/
