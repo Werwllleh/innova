@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const background = document.querySelector('.bg');
 
-    /*=============SUB-MENU*==========*/
+    /*=============SUB-MENU==========*/
     const menuLinks = document.querySelectorAll('.header__nav-link');
     const arrow = document.querySelectorAll('.menu-arrow');
 
@@ -38,11 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /*=============SUB-MENU*==========*/
+    /*=============SUB-MENU==========*/
 
 
-
-    /*=============SLIDERS*==========*/
+    /*=============SLIDERS==========*/
     new Swiper('.stocks__slider', {
         // Optional parameters
         slidesPerView: 3,
@@ -135,9 +134,41 @@ document.addEventListener('DOMContentLoaded', () => {
         // And if we need scrollbar
         scrollbar: false,
     });
-    /*============/SLIDERS*==========*/
+    /*============/SLIDERS==========*/
+
+
+
 
 
 })
 
 
+/*============MAP==========*/
+
+function initMap() {
+    let myMap = new ymaps.Map('mapInner', {
+        center: [52.726417, 41.425459],
+        zoom: 17,
+        controls: [],
+    });
+    let myPlacemark = new ymaps.Placemark(
+        myMap.getCenter(),
+        {
+            hintContent: 'г. Тамбов ул. Кавалерийская, 18а',
+        },
+        {
+            iconLayout: 'default#image',
+            iconImageHref: '../img/icons/map-place.svg',
+            iconImageSize: [32, 42],
+            iconImageOffset: [-16, -60],
+        }
+    );
+
+    myMap.geoObjects.add(myPlacemark);
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    if (document.querySelector('#mapInner').length) ymaps.ready(initMap);
+});
+
+/*===========/MAP==========*/

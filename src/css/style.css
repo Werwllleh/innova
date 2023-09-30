@@ -280,24 +280,29 @@ body {
     color: #337AE0;
     padding: 15px 14px 15px 65px;
 }
+
 .btn-whatsapp::before {
     background-image: url("../img/icons/whatsapp.svg");
     background-color: #337AE0;
 }
+
 .btn-telegram {
     background: #FFF;
     color: #337AE0;
     padding: 15px 14px 15px 65px;
 }
+
 .btn-telegram::before {
     background-image: url("../img/icons/telegram.svg");
     background-color: #337AE0;
 }
+
 .btn-viber {
     background: #FFF;
     color: #3A3C40;
     padding: 15px 14px 15px 65px;
 }
+
 .btn-viber::before {
     background-image: url("../img/icons/viber.svg");
     background-color: #337AE0;
@@ -1089,7 +1094,8 @@ body {
 
 }
 
-.feedback__slide-text {}
+.feedback__slide-text {
+}
 
 .feedback__footer {
     margin: 72px 0 0 0;
@@ -1139,6 +1145,7 @@ body {
     background-color: #242424;
     padding: 120px 0 170px 0;
 }
+
 .portfolio__header {
     display: flex;
     justify-content: space-between;
@@ -1146,17 +1153,21 @@ body {
     gap: 15px;
     margin: 0 0 50px 0;
 }
+
 .portfolio__title {
     color: #fff;
     max-width: 700px;
 }
-.portfolio__show-all {}
+
+.portfolio__show-all {
+}
+
 .portfolio__slider {
     position: relative;
 }
+
 .portfolio__card {
     position: relative;
-    background-color: #FFFFFF;
     border-radius: 16px;
     overflow: hidden;
 }
@@ -1168,9 +1179,12 @@ body {
 .portfolio__card-ba-slider {
 
 }
+
 .portfolio__card-info {
+    background-color: #FFFFFF;
     padding: 12px 30px 30px 30px;
 }
+
 .portfolio__card-category {
     margin: 0 0 8px 0;
     color: #A5A8AD;
@@ -1181,6 +1195,7 @@ body {
     letter-spacing: 0.33px;
     text-transform: uppercase;
 }
+
 .portfolio__card-title {
     margin: 0 0 16px 0;
     color: #15171B;
@@ -1188,16 +1203,76 @@ body {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 .portfolio__card-worktime {
-
+    position: relative;
+    color: #7A7E84;
+    padding: 0 0 0 24px;
 }
-.portfolio__card-worktime span{
 
+.portfolio__card-worktime::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 18px;
+    height: 18px;
+    background-image: url("../img/icons/clock.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
 }
+
+.portfolio__card-worktime span {
+    color: #3A3C40;
+}
+
+.portfolio__card-ba-slider {
+    height: 220px;
+}
+
+.portfolio__card-ba-slider img-comparison-slider {
+    max-height: 220px;
+    object-fit: contain;
+}
+
+img-comparison-slider {
+    --divider-width: 2px;
+    --divider-color: #fff;
+    /*--default-handle-opacity: 0.3;*/
+}
+
+.coloured-slider:focus {
+    outline: none;
+    /*box-shadow: 0px 0px 15px 5px #0c5d10;*/
+}
+
+.custom-slider-handle {
+    width: 16px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 30px;
+}
+
 /*===============/PORTFOLIO================*/
 
 
+/*===============MAP================*/
+
+.map-inner {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+/*==============/MAP================*/
 
 
 /*================FOOTER================*/
@@ -1205,34 +1280,45 @@ body {
 .footer {
     margin: 0 40px;
 }
-.footer__body {}
+
+.footer__body {
+}
+
 .footer__first-level {
     border-radius: 40px 40px 0 0;
     background: #F2F2F2;
 }
+
 .first__level-body {
     padding: 80px 0;
     display: flex;
 }
-.first__level-left {}
+
+.first__level-left {
+}
+
 .first__level-right {
     position: relative;
     width: 100%;
 }
+
 .first__level-right-images {
     position: absolute;
     right: 0;
     bottom: -110px;
 }
-.first__level-right-images img{
+
+.first__level-right-images img {
     margin: 0 10px;
-    max-width:100%;
-    max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 
 }
-.first__level-right-images img:nth-child(3){
+
+.first__level-right-images img:nth-child(3) {
     margin: 0 10px 105px 0;
 }
+
 .first__level-ask {
     display: flex;
     flex-direction: column;
@@ -1241,14 +1327,17 @@ body {
     line-height: normal;
     margin: 0 0 45px 0;
 }
+
 .first__level-ask-title {
     font-size: 38px;
     font-weight: 600;
 }
+
 .first__level-ask-text {
     font-size: 26px;
     font-weight: 400;
 }
+
 .first__level-socials {
     display: flex;
     gap: 20px;
@@ -1258,16 +1347,21 @@ body {
 .footer__second-level {
     background-color: #242424;
 }
+
 .second__level-body {
     padding: 80px 0 70px 0;
     display: flex;
     gap: 20px;
     width: 87%;
 }
-.second__level-col {}
+
+.second__level-col {
+}
+
 .second__level-col:nth-child(2) {
     margin: 0 0 0 auto;
 }
+
 .second__level-col:nth-child(3) {
     margin: 0 0 0 auto;
 }
@@ -1278,39 +1372,48 @@ body {
     justify-content: flex-start;
     height: 100%;
 }
+
 .second__level-about-logo {
     margin: 0 0 40px 0;
 }
+
 .second__level-about-contacts {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin: 0 0 30px 0;
 }
-.second__level-about-contacts a{
+
+.second__level-about-contacts a {
     color: #FFF;
     font-size: 26px;
     font-weight: 600;
     line-height: normal;
 }
+
 .second__level-about-addresses {
     display: flex;
     flex-direction: column;
     gap: 15px;
     margin: 0 0 10px 0;
 }
-.second__level-about-addresses p{
+
+.second__level-about-addresses p {
     color: #CFD3DA;
     font-size: 17px;
     font-weight: 400;
     line-height: normal;
 }
+
 .second__level-about-socials {
     display: flex;
     gap: 20px;
     margin: auto 0 0 0;
 }
-.second__level-information {}
+
+.second__level-information {
+}
+
 .second__level-information-title {
     color: #FFF;
     font-size: 26px;
@@ -1319,16 +1422,19 @@ body {
     margin: 0 0 34px 0;
     padding: 10px 0 0 0;
 }
-.second__level-information-list {}
+
+.second__level-information-list {
+}
+
 .second__level-information-list ul {
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
+
 .second__level-information-list li {
     color: #CFD3DA;
 }
-
 
 
 .footer__third-level {
@@ -1338,11 +1444,13 @@ body {
     padding: 30px 0 40px;
     border-top: 1px solid #3A3C40;
 }
+
 .third__level-links {
     display: flex;
     flex-direction: column;
     gap: 22px;
 }
+
 .third__level-link {
     display: block;
     color: #7A7E84;
@@ -1351,9 +1459,11 @@ body {
     font-weight: 400;
     line-height: normal;
 }
-.third__level-link a{
+
+.third__level-link a {
     text-decoration: underline;
 }
+
 .appointment-consultation-btn {
     cursor: pointer;
     position: absolute;
