@@ -1265,7 +1265,7 @@ img-comparison-slider {
 
 /*===============MAP================*/
 
-.map-inner {
+#mapInner {
     max-width: 1500px;
     max-height: 650px;
     margin: 0 40px;
