@@ -173,8 +173,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 let myMap;
 
-// Дождёмся загрузки API и готовности DOM.
-ymaps.ready(init);
+document.addEventListener('DOMContentLoaded', function () {
+    ymaps.ready(init);
+});
 
 function init () {
     // Создание экземпляра карты и его привязка к контейнеру с
