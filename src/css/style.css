@@ -247,6 +247,11 @@ body {
     font-size: 16px;
     font-weight: 500;
     padding: 15px 14px 15px 55px;
+    overflow: hidden;
+}
+
+.btn-about-universal span {
+    z-index: 1;
 }
 
 .btn-about-universal::before {
@@ -261,6 +266,7 @@ body {
     width: 38px;
     height: 38px;
     border-radius: 50%;
+    transition: left .2s ease-in;
 }
 
 .btn-about {
@@ -283,7 +289,10 @@ body {
 
 .btn-whatsapp::before {
     background-image: url("../img/icons/whatsapp.svg");
-    background-color: #337AE0;
+}
+
+.btn-whatsapp::after {
+    background-color: #25D366;
 }
 
 .btn-telegram {
@@ -292,9 +301,12 @@ body {
     padding: 15px 14px 15px 65px;
 }
 
+.btn-telegram::after {
+    background-color: #37AEE2;
+}
+
 .btn-telegram::before {
     background-image: url("../img/icons/telegram.svg");
-    background-color: #337AE0;
 }
 
 .btn-viber {
@@ -305,7 +317,62 @@ body {
 
 .btn-viber::before {
     background-image: url("../img/icons/viber.svg");
-    background-color: #337AE0;
+}
+
+.btn-viber::after {
+    background-color: #7F4DA0;
+}
+
+.btn-whatsapp,
+.btn-telegram,
+.btn-viber {
+    width: 171px;
+}
+
+.btn-whatsapp span,
+.btn-telegram span,
+.btn-viber span{
+    transition: color .2s ease-in;
+}
+
+.btn-whatsapp:hover span,
+.btn-telegram:hover span,
+.btn-viber:hover span {
+    color: #fff;
+}
+
+.btn-whatsapp::after,
+.btn-telegram::after,
+.btn-viber::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -95px;
+    bottom: 0;
+    margin: auto;
+    width: 270px;
+    height: 200px;
+    transform: scale(0);
+    border-radius: 50%;
+    transition: transform .2s ease-in;
+}
+
+.btn-whatsapp::before,
+.btn-telegram::before,
+.btn-viber::before {
+    z-index: 5;
+}
+
+.btn-whatsapp:hover::before,
+.btn-telegram:hover::before,
+.btn-viber:hover::before {
+    left: 18px;
+}
+
+.btn-whatsapp:hover::after,
+.btn-telegram:hover::after,
+.btn-viber:hover::after {
+    transform: scale(1);
 }
 
 
@@ -741,7 +808,53 @@ body {
 
 .stocks__slider {
     position: relative;
-    height: 540px;
+}
+
+.stock__link {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    transition: border-radius .2s ease-in-out;
+}
+
+.stock__link:hover {
+    border-radius: 36px;
+}
+
+.stock__link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+    width: 60px;
+    height: 60px;
+    background-image: url("../img/icons/arrow-more.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity .2s ease-in-out, bottom .2s ease-in-out;
+    z-index: 4;
+}
+
+.stock__link:hover::before {
+    opacity: 1;
+    bottom: 0;
+}
+
+.stock__link img {
+    display: block;
+    max-height: 540px;
+    object-fit: contain;
+    height: 100%;
+    transition: transform .2s ease-in-out;
+}
+
+.stock__link:hover img {
+    transform: scale(1.05);
 }
 
 .universal-slider .swiper-scrollbar {
@@ -1187,7 +1300,6 @@ body {
 
 .portfolio__card-category {
     margin: 0 0 8px 0;
-    color: #A5A8AD;
     font-size: 11px;
     font-style: normal;
     font-weight: 500;
@@ -1198,7 +1310,6 @@ body {
 
 .portfolio__card-title {
     margin: 0 0 16px 0;
-    color: #15171B;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
@@ -1207,6 +1318,15 @@ body {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.portfolio__card-category a {
+    color: #A5A8AD;
+}
+
+.portfolio__card-category a:hover,
+.portfolio__card-title a:hover{
+    color: #337AE0;
 }
 
 .portfolio__card-worktime {
@@ -1475,16 +1595,21 @@ img-comparison-slider {
 .section__qa {
     margin: 0 0 160px 0;
 }
-.qa {}
+
+.qa {
+}
+
 .qa__body {
     display: flex;
     gap: 20px;
     justify-content: space-between;
     align-items: flex-start;
 }
+
 .qa__title {
     max-width: 430px;
 }
+
 .qa__questions {
     display: flex;
     flex-direction: column;
@@ -1492,10 +1617,12 @@ img-comparison-slider {
     max-width: 800px;
     width: 100%;
 }
+
 .qa__question-field {
     border-radius: 16px;
     overflow: hidden;
 }
+
 .qa__question-header {
     display: block;
     position: relative;
@@ -1503,18 +1630,23 @@ img-comparison-slider {
     cursor: pointer;
     background: #F5F5F5;
 }
+
 .qa__question-title {
     color: #3A3C40;
     transition: color .2s;
 }
+
 .qa__question-title:hover {
     color: #337AE0;
 }
+
 .qa__question-checkbox {
     position: relative;
     display: none;
 }
-.qa__question-arrow {}
+
+.qa__question-arrow {
+}
 
 .qa__question-arrow::after {
     content: '';
@@ -1530,14 +1662,17 @@ img-comparison-slider {
     background-position: center;
     transition: background-image .2s ease-in-out;
 }
+
 .qa__question-checkbox:checked ~ .qa__question-arrow::after {
     width: 40px;
     height: 40px;
     background-image: url("../img/icons/qa-arrow-active.svg");
 }
+
 .qa__question-checkbox:checked ~ .qa__question-title {
     color: #337AE0;
 }
+
 .qa__question-answer {
     transform: scaleY(0);
     transform-origin: top;
@@ -1547,6 +1682,7 @@ img-comparison-slider {
     overflow: hidden;
     border-radius: 0 0 16px 16px;
 }
+
 .qa__question-answer.active {
     background: #F5F5F5;
     transform: scaleY(1);
@@ -1674,6 +1810,30 @@ img-comparison-slider {
     font-size: 26px;
     font-weight: 600;
     line-height: normal;
+    transition: color .2s ease-in-out;
+}
+
+.second__level-mail {
+    position: relative;
+}
+
+.second__level-mail:hover {
+   color: #FFAB2B;
+}
+
+.second__level-mail::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #FFAB2B;
+    transition: width .2s ease-in-out;
+}
+
+.second__level-mail:hover::after {
+    width: 100%;
 }
 
 .second__level-about-addresses {
@@ -1717,8 +1877,13 @@ img-comparison-slider {
     gap: 14px;
 }
 
-.second__level-information-list li {
+.second__level-information-list li a {
     color: #CFD3DA;
+    transition: color .2s ease;
+}
+
+.second__level-information-list li a:hover {
+    color: #FFAB2B;
 }
 
 

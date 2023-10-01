@@ -287,42 +287,42 @@
             <div class="stocks__slider universal-slider">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/1.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/2.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/3.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/4.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/1.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/2.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/3.png" alt="Акция">
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a href="#">
+                        <a class="stock__link" href="#">
                             <img src="./src/img/stocks/4.png" alt="Акция">
                         </a>
                     </div>
@@ -771,10 +771,10 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Виниры
+                                        <a href="#">Виниры</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Тотальное преображение улыбки: 28 виниров и коронок
+                                        <a href="">Тотальное преображение улыбки: 28 виниров и коронок</a>
                                     </div>
                                     <div class="portfolio__card-worktime b-txt">
                                         Длительность лечения: <span>2 недели</span>
@@ -795,10 +795,10 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Имплантация
+                                        <a href="">Имплантация</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Сложное протезирование на имплантах
+                                        <a href="">Сложное протезирование на имплантах</a>
                                     </div>
                                     <div class="portfolio__card-worktime">
                                         Длительность лечения: <span>6 месяцев</span>
@@ -819,10 +819,10 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Реставрация
+                                        <a href="">Реставрация</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Реставрация по закрытию трем и диастем
+                                        <a href="">Реставрация по закрытию трем и диастем</a>
                                     </div>
                                     <div class="portfolio__card-worktime">
                                         Длительность лечения: <span>2 визита</span>
@@ -843,12 +843,12 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Виниры
+                                        <a href="#">Виниры</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Тотальное преображение улыбки: 28 виниров и коронок
+                                        <a href="">Тотальное преображение улыбки: 28 виниров и коронок</a>
                                     </div>
-                                    <div class="portfolio__card-worktime">
+                                    <div class="portfolio__card-worktime b-txt">
                                         Длительность лечения: <span>2 недели</span>
                                     </div>
                                 </div>
@@ -867,10 +867,10 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Имплантация
+                                        <a href="">Имплантация</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Сложное протезирование на имплантах
+                                        <a href="">Сложное протезирование на имплантах</a>
                                     </div>
                                     <div class="portfolio__card-worktime">
                                         Длительность лечения: <span>6 месяцев</span>
@@ -891,10 +891,10 @@
                                 </div>
                                 <div class="portfolio__card-info">
                                     <div class="portfolio__card-category">
-                                        Реставрация
+                                        <a href="">Реставрация</a>
                                     </div>
                                     <div class="portfolio__card-title">
-                                        Реставрация по закрытию трем и диастем
+                                        <a href="">Реставрация по закрытию трем и диастем</a>
                                     </div>
                                     <div class="portfolio__card-worktime">
                                         Длительность лечения: <span>2 визита</span>
@@ -1118,9 +1118,15 @@
                             <p class="first__level-ask-text">Мы на связи в мессенджерах</p>
                         </div>
                         <div class="first__level-socials">
-                            <a class="btn-whatsapp btn-about-universal" href="#">WhatsApp</a>
-                            <a class="btn-telegram btn-about-universal" href="#">Telegram</a>
-                            <a class="btn-viber btn-about-universal" href="#">Viber</a>
+                            <a class="btn-whatsapp btn-about-universal" href="#">
+                                <span>WhatsApp</span>
+                            </a>
+                            <a class="btn-telegram btn-about-universal" href="#">
+                                <span>Telegram</span>
+                            </a>
+                            <a class="btn-viber btn-about-universal" href="#">
+                                <span>Viber</span>
+                            </a>
                         </div>
                     </div>
                     <div class="first__level-right">
