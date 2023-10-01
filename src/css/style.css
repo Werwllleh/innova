@@ -394,6 +394,7 @@ body {
     width: 167px;
     height: 167px;
 }
+
 .get-consultation::before {
     content: '';
     position: absolute;
@@ -408,6 +409,7 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .get-consultation::after {
     content: '';
     position: absolute;
@@ -424,6 +426,7 @@ body {
     background-color: #007aff;
     border-radius: 50%;
 }
+
 .get-consultation:hover::after {
     animation-name: rotate-btn;
     animation-duration: .5s;
@@ -484,8 +487,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
-
 
 
 /*=============HEADER=============*/
@@ -1484,6 +1485,106 @@ body {
 
 
 /*================/FEEDBACK================*/
+
+
+/*================EQUIPMENT================*/
+
+.equipment {
+    margin: 0 0 160px 0;
+}
+
+.equipment__body {
+}
+
+.equipment__title {
+    display: block;
+    max-width: 790px;
+    margin: 0 0 50px 0;
+}
+
+.equipment__slider-body {
+}
+
+.equipment__slider {
+    position: relative;
+    overflow: hidden;
+}
+
+.equipment__slide {
+}
+
+.equipment__slide-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.equipment__slide-info {
+    margin: 50px 0 0 0;
+    max-width: 450px;
+    width: 100%;
+}
+
+.equipment__slide-info-title {
+    margin: 0 0 28px 0;
+}
+
+.equipment__slide-info-text {
+}
+
+.equipment__slide-image {
+    position: relative;
+    max-width: 800px;
+    width: 100%;
+}
+
+.equipment__slide-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+    background-color: #000;
+    border-radius: 36px;
+}
+
+.equipment__slide-image img {
+    max-width: 800px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.equipment__slider-control {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 50px;
+    display: flex;
+    gap: 40px;
+}
+.equipment__slider-control-arrows {
+    position: relative;
+    width: 110px;
+}
+.equipment__slider .swiper-button-next,
+.equipment__slider .swiper-button-prev {
+    top: 0 !important;
+}
+.equipment__slider-control-pagination {
+}
+
+.equipment__slider .swiper-pagination {
+    position: relative;
+}
+
+.equipment__slider .swiper-pagination-bullet-active {
+    background: #FFAB2B;
+}
+
+/*================/EQUIPMENT================*/
 
 /*================PORTFOLIO================*/
 

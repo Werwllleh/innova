@@ -155,6 +155,28 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollbar: false,
     });
 
+    new Swiper('.equipment__slider', {
+        spaceBetween: 40,
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+
+        // If we need pagination
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true
+        },
+
+        // Navigation arrows
+        navigation: {
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+        },
+
+        // And if we need scrollbar
+        scrollbar: false,
+    });
+
     /*============/SLIDERS==========*/
 
 
