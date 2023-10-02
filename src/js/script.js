@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         spaceBetween: 40,
         direction: 'horizontal',
         loop: false,
-
+        allowTouchMove: false,
         // If we need pagination
         pagination: {
             el: '.swiper-pagination',
@@ -280,6 +280,48 @@ document.addEventListener('DOMContentLoaded', () => {
     ymaps.ready(init);
 
     /*===========/MAP==========*/
+
+
+    /*======================MODALS=====================*/
+
+    const body = document.querySelector('body');
+    const modal = document.querySelector('.modal');
+    const modalOverlay = document.querySelector('.modal-bg');
+    const modalButtons = document.querySelectorAll('.js-open-modal');
+
+
+
+    modalButtons.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const title = e.currentTarget.getAttribute('data-modal-title');
+            document.querySelector('.modal-title').innerHTML = title;
+            document.querySelector('.modal-footer-text').innerHTML = title;
+            document.querySelector('.modal-submit-btn').innerHTML = title;
+
+            modal.classList.add('show');
+            modalOverlay.classList.add('active');
+        });
+    });
+
+    document.body.addEventListener('keyup',  (e) => {
+        const key = e.keyCode;
+
+        if (key == 27) {
+            modal.classList.remove('show');
+            modalOverlay.classList.remove('active');
+        };
+    }, false);
+
+
+    modalOverlay.addEventListener('click', () => {
+        modalOverlay.classList.remove('active');
+        modal.classList.remove('show');
+    });
+
+    /*=====================/MODALS=====================*/
+
+
 
 })
 

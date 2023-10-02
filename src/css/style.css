@@ -1,34 +1,47 @@
 @font-face {
     font-family: "Wix Madefor Display";
     src: local("Wix Madefor Display Regular"),
-    url("../fonts/WixMadeforDisplay-Regular.ttf") format("ttf");
+    local("WixMadeforDisplay-Regular"),
+    url("../fonts/WixMadeforDisplay-Regular.ttf") format("ttf"),
+    url("../fonts/WixMadeforDisplay-Regular.woff") format("woff"),
+    url("../fonts/WixMadeforDisplay-Regular.woff2") format("woff2");
     font-weight: 400;
 }
 
 @font-face {
     font-family: "Wix Madefor Display";
     src: local("Wix Madefor Display Medium"),
-    url("../fonts/WixMadeforDisplay-Medium.ttf") format("ttf");
+    local("WixMadeforDisplay-Medium"),
+    url("../fonts/WixMadeforDisplay-Medium.ttf") format("ttf"),
+    url("../fonts/WixMadeforDisplay-Medium.woff") format("woff"),
+    url("../fonts/WixMadeforDisplay-Medium.woff2") format("woff2");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Wix Madefor Display";
     src: local("Wix Madefor Display SemiBold"),
-    url("../fonts/WixMadeforDisplay-SemiBold.ttf") format("ttf");
+    local("WixMadeforDisplay-SemiBold"),
+    url("../fonts/WixMadeforDisplay-SemiBold.ttf") format("ttf"),
+    url("../fonts/WixMadeforDisplay-SemiBold.woff") format("woff"),
+    url("../fonts/WixMadeforDisplay-SemiBold.woff2") format("woff2");
     font-weight: 600;
 }
 
 @font-face {
     font-family: "Wix Madefor Display";
     src: local("Wix Madefor Display Bold"),
-    url("../fonts/WixMadeforDisplay-Bold.ttf") format("ttf");
+    local("WixMadeforDisplay-Bold"),
+    url("../fonts/WixMadeforDisplay-Bold.ttf") format("ttf"),
+    url("../fonts/WixMadeforDisplay-Bold.woff") format("woff"),
+    url("../fonts/WixMadeforDisplay-Bold.woff2") format("woff2");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Wix Madefor Display";
     src: local("Wix Madefor Display ExtraBold"),
+    local("WixMadeforDisplay-ExtraBold"),
     url("../fonts/WixMadeforDisplay-ExtraBold.ttf") format("ttf");
     font-weight: 800;
 }
@@ -123,25 +136,48 @@ img, svg {
 body {
     position: relative;
     font-family: 'Wix Madefor Display', sans-serif;
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
     line-height: normal;
 }
 
+body.hidden {
+    overflow: hidden;
+}
+
 .bg {
-    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 20;
+    transition: .3s all;
+}
+
+.modal-bg {
     opacity: 0;
-    background: #15171B;
-    z-index: -1;
-    transition: .3s;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 35;
+    transition: .3s all;
+}
+
+.modal-bg.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 .blackout {
-    z-index: 1;
-    opacity: 0.4;
+    opacity: 1;
+    visibility: visible;
 }
 
 .h1-t {
@@ -489,6 +525,118 @@ body {
 }
 
 
+/*=============MODALS=============*/
+
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    width: 100%;
+    max-width: 560px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 37; /* Должен быть выше чем у подложки*/
+    padding: 47px;
+    background-color: #fff;
+    transition: 0.3s all;
+    border-radius: 30px;
+    box-shadow: 0 4px 40px 0 rgba(0, 0, 0, 0.10);
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-title {
+    color: #15171B;
+    margin: 0 0 14px 0;
+    text-align: center;
+}
+
+.modal-subtitle {
+    text-align: center;
+}
+
+.modal-form {
+    margin: 25px 0 24px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__group {
+    position: relative;
+    padding: 15px 0 0;
+    /*margin-top: 10px;*/
+    width: 100%;
+}
+.form__field {
+    width: 100%;
+    border: 0;
+    border-bottom: 1px solid #CFD3DA;
+    outline: 0;
+    padding: 18px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+    color: #3A3C40;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: normal;
+}
+.form__field::placeholder {
+    color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+    font-size: 16px;
+    cursor: text;
+    top: 35px;
+}
+.form__label {
+    position: absolute;
+    top: 10px;
+    display: block;
+    transition: 0.2s;
+    font-size: 13px;
+    color: #7A7E84;
+    z-index: -1;
+}
+.form__field:focus {
+    /*padding-bottom: 6px;*/
+    border-width: 3px;
+    border-bottom: 1px solid #FFAB2B;
+}
+.form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 13px;
+}
+/* reset input */
+.form__field:required, .form__field:invalid {
+    box-shadow: none;
+}
+.modal-footer {
+    color: #7A7E84;
+    font-size: 13px;
+    max-width: 390px;
+}
+
+.modal-footer a {
+    color: #3A3C40;
+    text-decoration-line: underline;
+}
+
+/*=============MODALS=============*/
+
+
 /*=============HEADER=============*/
 
 .header {
@@ -496,7 +644,7 @@ body {
     top: 0;
     width: 100%;
     max-height: 105px;
-    z-index: 2;
+    z-index: 30;
     background-color: #FFFFFF;
     padding: 28px 80px;
 }
@@ -571,15 +719,13 @@ body {
 
 .header__submenu {
     position: absolute;
-    /*top: 105px;*/
-    /*margin: 105px 0 0 0;*/
     margin: 0 0 0 -15px;
-    padding: 10px 20px 10px 10px;
+    padding: 25px 20px 10px 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     column-gap: 10px;
-    max-height: 340px;
+    max-height: 390px;
     height: 0;
     overflow: hidden;
     opacity: 0;
@@ -597,7 +743,8 @@ body {
 .submenu__link a {
     position: relative;
     display: block;
-    padding: 16px 10px 16px 30px;
+    padding: 16px 20px 16px 30px;
+    transition: padding .3s ease-in-out;
 }
 
 .submenu__link a::before {
@@ -615,6 +762,17 @@ body {
 }
 
 .submenu__link a:hover {
+    padding: 16px 13px 16px 37px;
+}
+
+.submenu__link a span {
+    position: absolute;
+    max-width: 310px;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    left: 0;
 }
 
 .header__nav-search {
@@ -679,6 +837,7 @@ body {
 .section__main-body {
 
 }
+
 .section__main-text {
     padding: 80px 0 380px 0;
 }
@@ -739,7 +898,7 @@ body {
     margin: auto 0;
 }
 
-.section__main-tile-image:nth-child(4) img{
+.section__main-tile-image:nth-child(4) img {
 
 }
 
@@ -1410,10 +1569,11 @@ body {
     background-color: #FFFFFF;
     border: 1px solid #15171B;
     color: #15171B;
+    transition: background-color .2s ease-in-out;
 }
 
 .btn-get-plan:hover {
-    transform: scale(1.05);
+    background-color: #FFAB2B;
 }
 
 .banner__plan-right {
@@ -2126,13 +2286,23 @@ img-comparison-slider {
     background-image: url("../img/icons/qa-arrow.svg");
     background-repeat: no-repeat;
     background-position: center;
-    transition: background-image .2s ease-in-out;
+    border-radius: 50%;
+    transition: background-image .2s ease-in-out, background-color .2s ease-in-out, transform .2s ease-in-out;
 }
+
+.qa__question-arrow:hover::after {
+    background-color: #FFFFFF;
+    background-image: url("../img/icons/qa-arrow-active.svg");
+    border-radius: 50%;
+}
+
 
 .qa__question-checkbox:checked ~ .qa__question-arrow::after {
     width: 40px;
     height: 40px;
     background-image: url("../img/icons/qa-arrow-active.svg");
+    transform: rotate(-180deg);
+    background-color: #FFFFFF;
 }
 
 .qa__question-checkbox:checked ~ .qa__question-title {
