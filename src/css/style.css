@@ -675,6 +675,11 @@ body {
 
 }
 
+.section__main-body {
+    display: flex;
+}
+
+
 .main__title {
     color: #164D9D;
     font-size: 70px;
@@ -695,6 +700,32 @@ body {
     cursor: pointer;
 }
 
+.section__main-images {
+
+}
+
+.section__main-tile {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0;
+    grid-row-gap: 0;
+}
+
+.section__main-tile-image:nth-child(1) {
+    grid-area: 1 / 2 / 2 / 3;
+}
+.section__main-tile-image:nth-child(2) { grid-area: 1 / 3 / 2 / 4; }
+.section__main-tile-image:nth-child(3) { grid-area: 2 / 1 / 3 / 2; }
+.section__main-tile-image:nth-child(4) { grid-area: 2 / 2 / 3 / 3; }
+.section__main-tile-image:nth-child(5) { grid-area: 2 / 3 / 3 / 4; }
+
+.section__main-tile-image {
+}
+
+.section__main-tile-image img {
+}
+
 /*==============/MAIN=============*/
 
 
@@ -703,6 +734,7 @@ body {
 .submain {
     margin: 140px 0 0 0;
 }
+
 .submain-body {
     margin: 0 0 0 auto;
     display: flex;
@@ -710,6 +742,7 @@ body {
     justify-content: flex-end;
     max-width: 750px;
 }
+
 .submain-comment {
     text-indent: 75px;
     color: #15171B;
@@ -718,14 +751,22 @@ body {
     line-height: normal;
     margin: 0 0 39px 0;
 }
+
 .submain__author {
     display: flex;
     align-items: center;
     gap: 30px;
 }
-.submain__author-image {}
-.submain__author-image img {}
-.submain__author-about {}
+
+.submain__author-image {
+}
+
+.submain__author-image img {
+}
+
+.submain__author-about {
+}
+
 .submain__author-name {
     color: #15171B;
     font-size: 20px;
@@ -733,6 +774,7 @@ body {
     line-height: normal;
     margin: 0 0 7px 0;
 }
+
 .submain__author-position {
     color: #7A7E84;
     max-width: 370px;
@@ -1611,14 +1653,17 @@ body {
     display: flex;
     gap: 40px;
 }
+
 .equipment__slider-control-arrows {
     position: relative;
     width: 110px;
 }
+
 .equipment__slider .swiper-button-next,
 .equipment__slider .swiper-button-prev {
     top: 0 !important;
 }
+
 .equipment__slider-control-pagination {
 }
 
