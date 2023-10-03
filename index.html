@@ -67,7 +67,7 @@
         <div class="header__right">
             <div class="header__right-phone">
                 <a class="header__phone" href="tel:+78352709791">+7 (8352) 70-97-91</a>
-                <span class="header__phone-span">Связаться с нами</span>
+                <button data-modal-title="Связаться с нами" type="button" class="header__phone-span js-open-modal">Связаться с нами</button>
             </div>
             <button data-modal-title="Записаться на прием" type="button"
                     class="online-write-btn btn btn-bg s-btn js-open-modal">Онлайн запись
@@ -1485,6 +1485,10 @@
             <div class="form__group field">
                 <input type="input" class="form__field" placeholder="Ваш телефон*" name="phone" id='phone' required/>
                 <label for="phone" class="form__label">Ваш телефон*</label>
+            </div>
+            <div class="form__group field mail-field">
+                <input type="input" class="form__field" placeholder="Ваше e-mail" name="email" id='email'/>
+                <label for="email" class="form__label">Ваше e-mail</label>
             </div>
             <button class="modal-submit-btn btn btn-bg l-btn" type="submit"></button>
         </form>

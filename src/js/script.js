@@ -294,6 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const name = document.getElementById('name');
     const phone = document.getElementById('phone');
+    const email = document.getElementById('email');
 
     name.addEventListener('input', (e) => {
         const text = e.currentTarget.value;
@@ -308,17 +309,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     })
 
-    const maskOptions = {
+    const maskOptionsPhone = {
         mask: '+{7} (000) 000-00-00'
     };
 
-    IMask(phone, maskOptions);
+    IMask(phone, maskOptionsPhone);
 
 
     modalButtons.forEach((item) => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             const title = e.currentTarget.getAttribute('data-modal-title');
+
+            if (title === 'Связаться с нами') {
+                document.querySelector('.mail-field').classList.add('active');
+            } else {
+                document.querySelector('.mail-field').classList.remove('active');
+            }
+
             document.querySelector('.modal-title').innerHTML = title;
             document.querySelector('.modal-footer-text').innerHTML = title;
             document.querySelector('.modal-submit-btn').innerHTML = title;

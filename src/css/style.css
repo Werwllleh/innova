@@ -638,6 +638,14 @@ body.hidden {
     top: 35px;
 }
 
+.mail-field {
+    display: none;
+}
+
+.mail-field.active {
+    display: block;
+}
+
 .form__label {
     position: absolute;
     top: 10px;
