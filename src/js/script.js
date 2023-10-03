@@ -288,7 +288,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const modalOverlay = document.querySelector('.modal-bg');
     const modalButtons = document.querySelectorAll('.js-open-modal');
+    const modalCloseButton = document.querySelector('.js-close-modal');
+    const checkField = document.querySelector('.check-field');
+    const modalSubmitButton = document.querySelector('.modal-submit-btn');
 
+    const name = document.getElementById('name');
+    const phone = document.getElementById('phone');
+
+    name.addEventListener('input', (e) => {
+        const text = e.currentTarget.value;
+        let regexp = /^[а-яёА-Я]+$/;
+
+        if (text.length >= 3 && regexp.test(text)) {
+            checkField.classList.add('active');
+            modalSubmitButton.disabled = false;
+        } else {
+            checkField.classList.remove('active');
+            modalSubmitButton.disabled = true;
+        }
+    })
+
+    const maskOptions = {
+        mask: '+{7} (000) 000-00-00'
+    };
+
+    IMask(phone, maskOptions);
 
 
     modalButtons.forEach((item) => {
@@ -310,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (key == 27) {
             modal.classList.remove('show');
             modalOverlay.classList.remove('active');
-        };
+        }
     }, false);
 
 
@@ -318,6 +342,20 @@ document.addEventListener('DOMContentLoaded', () => {
         modalOverlay.classList.remove('active');
         modal.classList.remove('show');
     });
+
+
+    modalCloseButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.classList.remove('show');
+        modalOverlay.classList.remove('active');
+    })
+
+    modalSubmitButton.addEventListener('click', (e) => {
+        modal.classList.remove('show');
+        checkField.classList.remove('active');
+        name.value = '';
+        phone.value = '';
+    })
 
     /*=====================/MODALS=====================*/
 
